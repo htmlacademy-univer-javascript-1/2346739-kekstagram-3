@@ -6,3 +6,7 @@ export function getRandomInteger(min, max) {
 export function strSizeCheck(str, max) {
   return str.length <= max;
 }
+
+export function isEscapeKey(evt) {
+  return evt.key === 'Escape';
+}
