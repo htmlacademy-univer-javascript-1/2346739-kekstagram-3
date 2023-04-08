@@ -1,30 +1,12 @@
-import { renderPhotos } from './pictures.js';
-import { sendRequest } from './fetch.js';
-import './big-picture.js';
-import './form.js';
-import './form-validation.js';
-import './effects.js';
-import './scale.js';
+import { getDataFromServer } from './api.js';
+import { renderPhotos, filterBtnsAddEvent, showAlert, TIMEOUT_DELAY } from './rendering-photos.js';
+import { debounce} from './utils.js';
 
-let photos = [];
-
-const onSuccess = (data) => {
-  photos = data.slice();
-  renderPhotos(photos);
-};
-
-const onFail = () => {
-  const messageAlert = document.createElement('div');
-  messageAlert.style.position = 'absolute';
-  messageAlert.style.left = 0;
-  messageAlert.style.top = 0;
-  messageAlert.style.right = 0;
-  messageAlert.style.textAlign = 'center';
-  messageAlert.style.fontSize = '30px';
-  messageAlert.style.backgroundColor = 'red';
-  messageAlert.style.padding = '10px 5px';
-  messageAlert.textContent = 'Ошибка загрузки данных';
-  document.body.append(messageAlert);
-};
-
-sendRequest(onSuccess, onFail, 'GET');
+getDataFromServer(
+  (photos) => {
+    renderPhotos(photos);
+    document.querySelector('.img-filters').classList.remove('img-filters--inactive');
+    filterBtnsAddEvent(debounce(() => renderPhotos(photos), TIMEOUT_DELAY));
+  },
+  (message) => showAlert(message),
+);
