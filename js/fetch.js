@@ -10,13 +10,13 @@ const sendRequest = (onSuccess, onFail, method, body) => {
       body: body,
     },
   )
-  .then((response) => response.json())
-  .then((data) => {
-    onSuccess(data);a
-  })
-  .catch(() => {
-    onFail();
-  });
+    .then((response) => response.json())
+    .then((data) => {
+      onSuccess(data);
+    })
+    .catch(() => {
+      onFail();
+    });
 };
 
 export {
