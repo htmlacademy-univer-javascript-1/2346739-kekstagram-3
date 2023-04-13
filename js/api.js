@@ -12,20 +12,19 @@ const getDataFromServer = (onSuccess, onFail) => {
 
 const sendDataToServer = (onSuccess, onFail, body) => {
   fetch(Urls.POST, {
-      method: 'POST',
-      body,
-    }).then((response) => {
-      if (response.ok) {
-        onSuccess();
-      } else {
-        onFail('Не удалось опубликовать');
-      }
-    })
-    .catch(() => onFail('Не удалось опубликовать'));
+    method: 'POST',
+    body,
+  }).then((response) => {
+    if (response.ok) {
+      onSuccess();
+    } else {
+      onFail('Не удалось опубликовать');
+    }
+  })
+  .catch(() => onFail('Не удалось опубликовать'));
 };
 
 export {
   getDataFromServer,
   sendDataToServer
 };
-
