@@ -19,4 +19,4 @@ export const draw = () => {
     patternUserFragment.append(temp);
   }
   pictures.append(patternUserFragment);
-}
+};

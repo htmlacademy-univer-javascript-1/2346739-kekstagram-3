@@ -21,7 +21,7 @@ const sendDataToServer = (onSuccess, onFail, body) => {
       onFail('Не удалось опубликовать');
     }
   })
-  .catch(() => onFail('Не удалось опубликовать'));
+    .catch(() => onFail('Не удалось опубликовать'));
 };
 
 export {
