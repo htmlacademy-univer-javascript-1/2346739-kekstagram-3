@@ -27,3 +27,4 @@ const Urls = {
   };
   
   export {getDataFromServer, sendDataToServer};
+  

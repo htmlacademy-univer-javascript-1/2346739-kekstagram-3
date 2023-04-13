@@ -9,3 +9,4 @@ const createComment = (comment, template) => {
   };
   
   export { createComment };
+  
