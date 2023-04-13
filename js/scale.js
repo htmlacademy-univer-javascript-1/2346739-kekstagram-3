@@ -37,4 +37,7 @@ const onScaleControlClick = (evt) => {
 
 scaleControl.addEventListener('click', onScaleControlClick);
 
-export { setDefaultScale };
+export {
+  setDefaultScale
+};
+

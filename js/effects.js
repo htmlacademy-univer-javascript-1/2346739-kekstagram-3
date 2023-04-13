@@ -24,10 +24,10 @@ const Effect = {
     step: 0.1,
     connect: 'lower',
     format: {
-      to: function (value) {
+      to: function(value) {
         return value;
       },
-      from: function (value) {
+      from: function(value) {
         return parseFloat(value);
       }
     }
@@ -40,10 +40,10 @@ const Effect = {
     start: 1,
     step: 0.1,
     format: {
-      to: function (value) {
+      to: function(value) {
         return value.toFixed(1);
       },
-      from: function (value) {
+      from: function(value) {
         return parseFloat(value);
       }
     }
@@ -56,10 +56,10 @@ const Effect = {
     start: 1,
     step: 0.1,
     format: {
-      to: function (value) {
+      to: function(value) {
         return value.toFixed(1);
       },
-      from: function (value) {
+      from: function(value) {
         return parseFloat(value);
       }
     }
@@ -72,10 +72,10 @@ const Effect = {
     start: 100,
     step: 1,
     format: {
-      to: function (value) {
+      to: function(value) {
         return `${value}%`;
       },
-      from: function (value) {
+      from: function(value) {
         return parseFloat(value);
       }
     }
@@ -88,10 +88,10 @@ const Effect = {
     start: 3,
     step: 0.1,
     format: {
-      to: function (value) {
+      to: function(value) {
         return `${value.toFixed(1)}px`;
       },
-      from: function (value) {
+      from: function(value) {
         return parseFloat(value);
       }
     }
@@ -104,10 +104,10 @@ const Effect = {
     start: 3,
     step: 0.1,
     format: {
-      to: function (value) {
+      to: function(value) {
         return value.toFixed(1);
       },
-      from: function (value) {
+      from: function(value) {
         return parseFloat(value);
       }
     }
@@ -224,4 +224,7 @@ const removeFilters = () => {
   sliderElement.noUiSlider.destroy();
 };
 
-export { formElement as form, addEventListenerImage, removeEventListenerImage, addFilter, removeFilters, scaleValueElement };
+export {
+  formElement as form, addEventListenerImage, removeEventListenerImage, addFilter, removeFilters, scaleValueElement
+};
+

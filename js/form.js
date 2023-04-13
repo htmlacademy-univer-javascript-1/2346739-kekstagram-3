@@ -1,6 +1,18 @@
-import { isEscKey, checkForRepeats } from './utils.js';
-import { form, addEventListenerImage, removeEventListenerImage, addFilter, removeFilters, scaleValueElement } from './effects.js';
-import { sendDataToServer } from './api.js';
+import {
+  isEscKey,
+  checkForRepeats
+} from './utils.js';
+import {
+  form,
+  addEventListenerImage,
+  removeEventListenerImage,
+  addFilter,
+  removeFilters,
+  scaleValueElement
+} from './effects.js';
+import {
+  sendDataToServer
+} from './api.js';
 
 const FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png'];
 const MAX_LENGTH_COMMENT = 140;
@@ -228,4 +240,8 @@ const setUserFormSubmit = (onSuccess) => {
   });
 };
 
-export { setUserFormSubmit, closeEditingWindow };
+export {
+  setUserFormSubmit,
+  closeEditingWindow
+};
+

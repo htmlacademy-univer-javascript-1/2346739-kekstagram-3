@@ -1,6 +1,13 @@
-import { renderPhotosList } from './big-picture.js';
-import { getRandomInteger} from './utils.js';
-import { closeEditingWindow,  setUserFormSubmit  } from './form.js';
+import {
+  renderPhotosList
+} from './big-picture.js';
+import {
+  getRandomInteger
+} from './utils.js';
+import {
+  closeEditingWindow,
+  setUserFormSubmit
+} from './form.js';
 
 const ALERT_SHOW_TIME = 5000;
 const TIMEOUT_DELAY = 500;
@@ -74,4 +81,10 @@ const filterBtnsAddEvent = (cb) => {
 };
 setUserFormSubmit(closeEditingWindow);
 
-export{ renderPhotos, filterBtnsAddEvent, showAlert, TIMEOUT_DELAY };
+export {
+  renderPhotos,
+  filterBtnsAddEvent,
+  showAlert,
+  TIMEOUT_DELAY
+};
+

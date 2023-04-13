@@ -1,4 +1,6 @@
-import { isEscapeKey } from './util.js';
+import {
+  isEscapeKey
+} from './util.js';
 
 const MAX_COMMENTS_COUNT = 5;
 let commentsCounter;
@@ -11,7 +13,11 @@ const commentsContainerElement = bigPictureWindowElement.querySelector('.social_
 const loaderСommentsButtonElement = bigPictureWindowElement.querySelector('.comments-loader');
 const shownCommentsCount = bigPictureWindowElement.querySelector('.shown-comments-count');
 
-const appendNewComments = ({avatar, name, message}) => {
+const appendNewComments = ({
+  avatar,
+  name,
+  message
+}) => {
   const newComment = commentTemplate.cloneNode(true);
   newComment.querySelector('.social__picture').src = avatar;
   newComment.querySelector('.social__picture').alt = name;
@@ -19,7 +25,7 @@ const appendNewComments = ({avatar, name, message}) => {
   return newComment;
 };
 
-function updateCommentsCount (value) {
+function updateCommentsCount(value) {
   shownCommentsCount.textContent = value;
 }
 
@@ -46,15 +52,20 @@ const buttonKeydownHandler = (evt) => {
   }
 };
 
-function closeBigPictureWindow () {
+function closeBigPictureWindow() {
   document.removeEventListener('keydown', buttonKeydownHandler);
   closeButtonElement.removeEventListener('click', buttonClickHandler);
   bigPictureWindowElement.classList.add('hidden');
   document.body.classList.remove('modal-open');
-  loaderСommentsButtonElement.removeEventListener('click',  loadNewComments);
+  loaderСommentsButtonElement.removeEventListener('click', loadNewComments);
 }
 
-const openBigPictureWindow = ({url, description, likes, comments}) => {
+const openBigPictureWindow = ({
+  url,
+  description,
+  likes,
+  comments
+}) => {
   bigPictureWindowElement.querySelector('.big-picture__img').querySelector('img').setAttribute('src', url);
   bigPictureWindowElement.querySelector('.likes-count').textContent = likes;
   bigPictureWindowElement.querySelector('.comments-count').textContent = comments.length;
@@ -69,9 +80,12 @@ const openBigPictureWindow = ({url, description, likes, comments}) => {
   bigPictureWindowElement.classList.remove('hidden');
   document.body.classList.add('modal-open');
 
-  closeButtonElement.addEventListener('click',  buttonClickHandler);
+  closeButtonElement.addEventListener('click', buttonClickHandler);
   document.addEventListener('keydown', buttonKeydownHandler);
-  loaderСommentsButtonElement.addEventListener('click',  loadNewComments);
+  loaderСommentsButtonElement.addEventListener('click', loadNewComments);
 };
 
-export {openBigPictureWindow};
+export {
+  openBigPictureWindow
+};
+

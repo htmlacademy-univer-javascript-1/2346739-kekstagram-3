@@ -1,4 +1,6 @@
-import { openBigPictureWindow } from './rendering-full-photo.js';
+import {
+  openBigPictureWindow
+} from './rendering-full-photo.js';
 
 const picturesContainerElement = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('a');
@@ -6,13 +8,23 @@ const pictureTemplate = document.querySelector('#picture').content.querySelector
 const renderPhotosList = (photosList) => {
   const photosListFragment = document.createDocumentFragment();
 
-  photosList.forEach(({url, likes, comments, description}) => {
+  photosList.forEach(({
+    url,
+    likes,
+    comments,
+    description
+  }) => {
     const photoElement = pictureTemplate.cloneNode(true);
     photoElement.querySelector('img').setAttribute('src', url);
     photoElement.querySelector('.picture__likes').textContent = likes;
     photoElement.querySelector('.picture__comments').textContent = comments.length;
     photoElement.querySelector('img').addEventListener('click', () => {
-      openBigPictureWindow({url, likes, comments, description});
+      openBigPictureWindow({
+        url,
+        likes,
+        comments,
+        description
+      });
     });
     photosListFragment.append(photoElement);
   });
@@ -20,4 +32,7 @@ const renderPhotosList = (photosList) => {
   picturesContainerElement.append(photosListFragment);
 };
 
-export {renderPhotosList};
+export {
+  renderPhotosList
+};
+

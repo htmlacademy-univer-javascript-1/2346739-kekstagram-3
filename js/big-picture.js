@@ -1,4 +1,6 @@
-import { isEscKey } from './utils.js';
+import {
+  isEscKey
+} from './utils.js';
 
 const MAX_COMMENTS_COUNT = 5;
 
@@ -14,7 +16,11 @@ const pictureTemplate = document.querySelector('#picture').content.querySelector
 let commentsCounter;
 let allComments;
 
-const appendNewComments = ({ avatar, name, message }) => {
+const appendNewComments = ({
+  avatar,
+  name,
+  message
+}) => {
   const newComment = commentTemplate.cloneNode(true);
   newComment.querySelector('.social__picture').src = avatar;
   newComment.querySelector('.social__picture').alt = name;
@@ -57,7 +63,12 @@ function closeBigPictureWindow() {
   loaderСommentsBtnElement.removeEventListener('click', loadNewComments);
 }
 
-const openBigPictureWindow = ({ url, description, likes, comments }) => {
+const openBigPictureWindow = ({
+  url,
+  description,
+  likes,
+  comments
+}) => {
   bigPictureWindowElement.querySelector('.big-picture__img').querySelector('img').setAttribute('src', url);
   bigPictureWindowElement.querySelector('.likes-count').textContent = likes;
   bigPictureWindowElement.querySelector('.comments-count').textContent = comments.length;
@@ -80,13 +91,23 @@ const openBigPictureWindow = ({ url, description, likes, comments }) => {
 const renderPhotosList = (photosList) => {
   const photosListFragment = document.createDocumentFragment();
 
-  photosList.forEach(({ url, likes, comments, description }) => {
+  photosList.forEach(({
+    url,
+    likes,
+    comments,
+    description
+  }) => {
     const photoElement = pictureTemplate.cloneNode(true);
     photoElement.querySelector('img').setAttribute('src', url);
     photoElement.querySelector('.picture__likes').textContent = likes;
     photoElement.querySelector('.picture__comments').textContent = comments.length;
     photoElement.querySelector('img').addEventListener('click', () => {
-      openBigPictureWindow({ url, likes, comments, description });
+      openBigPictureWindow({
+        url,
+        likes,
+        comments,
+        description
+      });
     });
     photosListFragment.append(photoElement);
   });
@@ -94,4 +115,7 @@ const renderPhotosList = (photosList) => {
   picturesContainerElement.append(photosListFragment);
 };
 
-export { renderPhotosList };
+export {
+  renderPhotosList
+};
+

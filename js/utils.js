@@ -45,4 +45,11 @@ const debounce = (callback, timeoutDelay = 500) => {
   };
 };
 
-export { isEscKey, numberDeclination, isEscapeKey, checkForRepeats, debounce };
+export {
+  isEscKey,
+  numberDeclination,
+  isEscapeKey,
+  checkForRepeats,
+  debounce
+};
+
